@@ -6,6 +6,7 @@ import {WorkshopsComponent} from './features/workshops.component';
 import {TrainingComponent} from './features/training.component';
 import {GalleryComponent} from './features/gallery.component';
 import {ContactComponent} from './features/contact.component';
+import {TechradianceComponent} from './techfest/techradiance.component';
 
 
 const appRoutes: Routes = [
@@ -14,7 +15,8 @@ const appRoutes: Routes = [
   { path: 'workshops', component: WorkshopsComponent},
   { path: 'trainings', component: TrainingComponent},
   { path: 'gallery', component: GalleryComponent},
-  { path: 'contact-us', component:ContactComponent},
+  { path: 'contact-us', component: ContactComponent},
+  { path: 'technoradiance', component: TechradianceComponent},
   { path: '**', redirectTo: 'home' }
 ]
 @NgModule({

@@ -13,6 +13,7 @@ import { PageBannerComponent } from './page-banner.component';
   imports: [
     CommonModule
   ],
-  declarations: [FaqComponent, ContactComponent, WorkshopsComponent, TrainingComponent, GalleryComponent, PageBannerComponent]
+  declarations: [FaqComponent, ContactComponent, WorkshopsComponent, TrainingComponent, GalleryComponent, PageBannerComponent],
+  exports: [PageBannerComponent]
 })
 export class FeaturesModule { }

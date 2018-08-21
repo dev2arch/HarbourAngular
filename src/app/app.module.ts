@@ -9,6 +9,7 @@ import { HeaderComponent } from './common/header.component';
 import { SliderComponent } from './common/slider.component';
 import { FooterComponent } from './common/footer.component';
 import {FeaturesModule} from './features/features.module';
+import {TechfestModule} from './techfest/techfest.module';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import {FeaturesModule} from './features/features.module';
   imports: [
     BrowserModule,
     RoutingModule,
-    FeaturesModule
+    FeaturesModule,
+    TechfestModule
   ],
   providers: [],
   bootstrap: [AppComponent]
