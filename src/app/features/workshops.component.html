@@ -10,14 +10,16 @@
       </div>
     </div>
     <div class="row">
+      <div>
       <div class="col-lg-4 col-md-4 col-sm-6 text-center" *ngFor="let workshop of workshopData">
         <div class="clients-box mb-30">
           <img class="img-responsive" [src]="workshop.img" alt="">
           <div class="clients-info">
             <h5>{{workshop.name}}</h5>
-            <a href="#"> <i class="fa fa-link"></i> Download Content</a>
+            <a href="{{workshop.pdf}}" target="_blank"> <i class="fa fa-link"></i> Download Content</a>
           </div>
         </div>
+      </div>
       </div>
     </div>
   </div>
