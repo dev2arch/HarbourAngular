@@ -16,7 +16,7 @@ const appRoutes: Routes = [
   { path: 'trainings', component: TrainingComponent},
   { path: 'gallery', component: GalleryComponent},
   { path: 'contact-us', component: ContactComponent},
-  { path: 'technoradiance', component: TechradianceComponent},
+  { path: "technoradiance", component: TechradianceComponent},
   { path: '**', redirectTo: 'home' }
 ]
 @NgModule({

@@ -17,6 +17,13 @@
     <!--<h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>-->
   <!--</li>-->
 <!--</ul>-->
+<!--<div *ngIf="!dataLoaded">-->
+  <!--<div id="pre-loader">-->
+  <!--<img src="assets/images/pre-loader/loader-01.svg" alt="">-->
+  <!--</div>-->
+<!--</div>-->
+<div *ngIf="dataLoaded">
 <app-header></app-header>
 <router-outlet></router-outlet>
 <app-footer></app-footer>
+</div>

@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="section-title text-center">
-          <h1 class="theme-color">About Technoradiance</h1>
+          <h1 class="theme-color">About Technoradiance'19</h1>
           <p style="font-size: 15px;text-align: justify;">
 
             Techradiance, a unique initiative by Harbour Technologies in association with lITs.
@@ -27,6 +27,74 @@
     </div>
   </div>
 </section>
+<div class="divider dashed mt-40 mb-40"></div>
+<section class="page-section-ptb">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+        <div class="section-title">
+          <h3 class="mb-20 theme-color">3 STAGES OF TECHRADIANCE'19</h3>
+          <p>PRELIMINARY ROUNDS <small>
+            The ﬁrst two stages of the event will be organized at the various Zonal Centers
+            located in only different cities pan India.</small> and Third round will be the FINALE ROUND</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 mt-70">
+        <div class="stepwizard">
+          <div class="stepwizard-row">
+            <div class="stepwizard-step">
+              <button type="button" class="button btn-circle">1</button>
+              <p class="stephead">First Round</p>
+            </div>
+            <div class="stepwizard-step">
+              <button type="button" class="button btn-circle">2</button>
+              <p class="stephead">Second Round</p>
+            </div>
+            <div class="stepwizard-step">
+              <button type="button" class="button btn-circle">3</button>
+              <p class="stephead">Third Round</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4 mb-60">
+        <div class="feature-text left-icon">
+          <div class="text-center">
+
+            <p>Would be comprised of 2 days workshop on various advance modules offered by us in which knowledge and rudimentary
+              concepts will be provided to the participating students</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4 mb-60">
+        <div class="feature-text left-icon">
+          <div class="text-center">
+
+            <p>Commences after the completion of the Workshop i.e. a competition would be executed among the participants.
+              Merit Group selection & Certiﬁcate Distribution</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4 mb-60">
+        <div class="feature-text left-icon">
+          <div class=" text-center">
+            <p class="">THE FINAL ROUND:
+              Of this event will organize at IIT Bombay or IIT Madras during the Fest(last week
+              of March/April 2019)
+              where winners of each zonal center would be invited to
+              come and participate at the ﬁnal showdown at the
+              IIT Madras or Bombay campus.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider dashed mt-40 mb-40"></div>
+
 <section id="portfolio" class="portfolio page-section-pb wihte-bg">
   <div class="container">
     <div class="row">
@@ -35,99 +103,33 @@
       </div>
     </div>
     <div class="isotope-filters">
-      <button data-filter="" class="active">All</button>
-      <button data-filter=".photography">photography</button>
-      <button data-filter=".illustration">illustration</button>
-      <button data-filter=".branding">branding</button>
-      <button data-filter=".web-design">web-design</button>
+      <button data-filter="" class="active" (click)='setFilter("All")'>All</button>
+      <button data-filter=".6to12" (click)='setFilter("6to12")'>6th to 12th</button>
+      <button data-filter=".8to12" (click)='setFilter("8to12")'>8th to 12th</button>
     </div>
     <div class="isotope popup-gallery columns-4 no-title">
-      <div class="grid-item photography illustration">
+      <div *ngFor="let workshop of workshops">
+      <div *ngIf="workshop.cat=== filter || filter==='All'" class="col-md-3 col-6 col-xs-12 custom-padding photography {{workshop.cat}}" >
         <div class="portfolio-item">
-          <img src="demo-one-page/agency/images/portfolio/01.jpg" alt="">
+          <!--<img src="demo-one-page/agency/images/portfolio/01.jpg" alt="">-->
           <div class="portfolio-overlay">
-            <h4 class="text-white"> <a href="#"> Post youtube video </a> </h4>
-            <span class="text-white"> <a href="#"> Photography  </a>| <a href="#">Illustration </a> </span>
+            <h4 class="text-white"> <a href="#">{{workshop.name}}</a> </h4>
+            <span class="text-white"> <a href="#"> Fee  </a>: <a href="#">{{workshop.fee}}</a> </span>
           </div>
-          <a class="popup popup-youtube" href="https://www.youtube.com/watch?v=LgvseYYhqU0"><i class="fa fa-play"></i></a>
+          <a class="popup portfolio-img" href="{{workshop.img}}"><i class="fa fa-arrows-alt"></i></a>
         </div>
       </div>
-      <div class="grid-item photography branding">
-        <div class="portfolio-item">
-          <img src="demo-one-page/agency/images/portfolio/02.jpg" alt="">
-          <div class="portfolio-overlay">
-            <h4 class="text-white"> <a href="#"> Post simple image </a> </h4>
-            <span class="text-white"> <a href="#"> Photography  </a>| <a href="#">Branding </a> </span>
-          </div>
-          <a class="popup portfolio-img" href="demo-one-page/agency/images/portfolio/02.jpg"><i class="fa fa-arrows-alt"></i></a>
-        </div>
-      </div>
-      <div class="grid-item illustration branding">
-        <div class="portfolio-item">
-          <img src="demo-one-page/agency/images/portfolio/03.jpg" alt="">
-          <div class="portfolio-overlay">
-            <h4 class="text-white"> <a href="#"> Post simple image </a> </h4>
-            <span class="text-white"> <a href="#"> Illustration </a> |<a href="#"> Branding </a> </span>
-          </div>
-          <a class="popup portfolio-img" href="demo-one-page/agency/images/portfolio/03.jpg"><i class="fa fa-arrows-alt"></i></a>
-        </div>
-      </div>
-      <div class="grid-item web-design">
-        <div class="portfolio-item">
-          <img src="demo-one-page/agency/images/portfolio/04.gif" alt="">
-          <div class="portfolio-overlay">
-            <h4 class="text-white"> <a href="#"> Post simple image </a> </h4>
-            <span class="text-white"> <a href="#"> Branding </a> | <a href="#"> Web Design </a> </span>
-          </div>
-          <a class="popup portfolio-img" href="demo-one-page/agency/images/portfolio/04.gif"><i class="fa fa-arrows-alt"></i></a>
-        </div>
-      </div>
-      <div class="grid-item photography illustration">
-        <div class="portfolio-item">
-          <img src="demo-one-page/agency/images/portfolio/05.jpg" alt="">
-          <div class="portfolio-overlay">
-            <h4 class="text-white"> <a href="#"> Post simple image </a> </h4>
-            <span class="text-white"> <a href="#"> Photography  </a>| <a href="#">Illustration </a> </span>
-          </div>
-          <a class="popup portfolio-img" href="demo-one-page/agency/images/portfolio/05.jpg"><i class="fa fa-arrows-alt"></i></a>
-        </div>
-      </div>
-      <div class="grid-item photography web-design">
-        <div class="portfolio-item">
-          <img src="demo-one-page/agency/images/portfolio/08.gif" alt="">
-          <div class="portfolio-overlay">
-            <h4 class="text-white"> <a href="#"> Post simple image </a> </h4>
-            <span class="text-white"> <a href="#"> Web Design  </a> | <a href="#">Illustration </a> </span>
-          </div>
-          <a class="popup portfolio-img" href="demo-one-page/agency/images/portfolio/08.gif"><i class="fa fa-arrows-alt"></i></a>
-        </div>
-      </div>
-      <div class="grid-item web-design">
-        <div class="portfolio-item">
-          <img src="demo-one-page/agency/images/portfolio/07.jpg" alt="">
-          <div class="portfolio-overlay">
-            <h4 class="text-white"> <a href="#"> Post simple image </a> </h4>
-            <span class="text-white"> <a href="#"> Branding </a> | <a href="#"> Web Design </a> </span>
-          </div>
-          <a class="popup portfolio-img" href="demo-one-page/agency/images/portfolio/07.jpg"><i class="fa fa-arrows-alt"></i></a>
-        </div>
-      </div>
-      <div class="grid-item photography illustration">
-        <div class="portfolio-item">
-          <img src="demo-one-page/agency/images/portfolio/06.jpg" alt="">
-          <div class="portfolio-overlay">
-            <h4 class="text-white"> <a href="#"> Post youtube video </a> </h4>
-            <span class="text-white"> <a href="#"> Photography  </a>| <a href="#">Illustration </a> </span>
-          </div>
-          <a class="popup popup-youtube" href="https://www.youtube.com/watch?v=LgvseYYhqU0"><i class="fa fa-play"></i></a>
-        </div>
-      </div>
+    </div>
     </div>
   </div>
 </section>
+<div class="divider dashed mt-40 mb-40"></div>
 <section class="process-list white-bg page-section-pt">
   <div class="container">
     <div class="row ">
+      <div class="section-title text-center">
+        <h2>Process</h2>
+      </div>
       <div class="col-sm-12">
         <div class="process left">
           <div class="process-step">
@@ -138,8 +140,8 @@
               <span class="flaticon-line"></span>
             </div>
             <div class="process-info">
-              <h5 class="mb-20"> Analysis</h5>
-              <p>An open discussion of your managerial board with our designers let's them gain a deeper insight of your plans, future goals and the preferred approach towards the achievement of those goals. Requirements are analyzed and milestones are defined. Expenses and required man hours are speculated along with the creation of the documentation that propels us into further stages of development.</p>
+              <h5 class="mb-20"> Institute Confirmation</h5>
+              <p>Confirm your institute as a Zonal Center on the School letter head </p>
             </div>
           </div>
           <div class="border-area left-bottom"></div>
@@ -153,8 +155,8 @@
               <span class="flaticon-technology-1"></span>
             </div>
             <div class="process-info">
-              <h5 class="mb-20"> Design</h5>
-              <p>The understanding gained from the previous stage is used to shape models and blueprints. Findings of extensive research after the initial meeting initiate the formal designing of the product. The plans, raw at this stage, are discussed with the stakeholders and feedbacks and opinions are sent back and forth until one of the many proposed designs is finalized and sent to the technical team.</p>
+              <h5 class="mb-20"> Date Confirmation</h5>
+              <p>Date of the workshop is decided by the mutual conversation of institute authorities and Our Coordinators</p>
             </div>
           </div>
           <div class="border-area right-top"></div>
@@ -169,8 +171,8 @@
               <span class="flaticon-computer"></span>
             </div>
             <div class="process-info">
-              <h5 class="mb-20"> Development</h5>
-              <p>Ideas start taking shape and the process is streamlined with a singular vision to deliver the best product that meets all the business requirements and more. Our designers and technical experts work together to create a newsworthy online presence for your business. Hours of diligent work with regular inputs from the business bring an end to the most important segment of all the <strong> web development phases </strong> wherein the final product is ready to be taken to the next level.</p>
+              <h5 class="mb-20"> Minimum Requirement</h5>
+              <p>Minimum 60-100 participants are required to conduct this workshop at school campus</p>
             </div>
           </div>
           <div class="border-area left-bottom"></div>
@@ -186,8 +188,8 @@
               <span class="flaticon-stopwatch-tool-to-control-test-time"></span>
             </div>
             <div class="process-info">
-              <h5 class="mb-20"> Testing</h5>
-              <p>The end product is put through multiple rounds of rigorous testing to ensure it is bug-free with all functionalities operating as expected. Several rounds of unit testing and system integration testing assess the work done through the above <strong> web development phases </strong> and changes are made wherever a discrepancy is witnessed. Only after getting a sign-off on the UAT the testing phase is brought to an end.</p>
+              <h5 class="mb-20"> We Provide</h5>
+              <p>TKit will be given in a group of five to six students participating in the workshop program</p>
             </div>
           </div>
           <div class="border-area right-top"></div>
@@ -203,8 +205,8 @@
               <span class="flaticon-rocket-launch"></span>
             </div>
             <div class="process-info">
-              <h5 class="mb-20"> Go-Live</h5>
-              <p>After all the quality checks and a green signal from the business the website is launched. After initial support on day-to-day activities the reins are handed over to the business. However, our post deployment maintenance services render necessary assistance and troubleshooting services.</p>
+              <h5 class="mb-20"> Certificate Distribution</h5>
+              <p>After the successful conduction of the workshop every participating candidate will be provided with certification from Harbour Technologies in association with <strong>IIT Bombay</strong></p>
             </div>
           </div>
           <div class="border-area left-bottom"></div>

@@ -4,3 +4,17 @@
 /*@import "/assets/css/style.css";*/
 /*@import "/assets/css/responsive.css";*/
 /*@import "/assets/css/shortcodes/shortcodes.css";*/
+.stephead{
+  font-size: 1.2em;
+  color: black;
+}
+.w25{
+  width:25%;
+  padding: 0px!important;
+}
+.custom-padding{
+  padding-left: .2%;
+  padding-top: .6%;
+  padding-bottom: .6%;
+
+}

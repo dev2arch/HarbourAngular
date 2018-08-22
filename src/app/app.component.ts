@@ -7,7 +7,10 @@ import { Router, NavigationEnd } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  constructor(private router: Router){}
+  dataLoaded= true;
+  title = 'app';
+  constructor(private router: Router){
+  }
   ngOnInit(){
     this.router.events.subscribe(
       (evt) => {
@@ -18,6 +21,9 @@ export class AppComponent implements OnInit{
         }
       }
     )
+    setTimeout(()=>{
+      this.dataLoaded = true;
+    }, 0);
   }
-  title = 'app';
+
 }
