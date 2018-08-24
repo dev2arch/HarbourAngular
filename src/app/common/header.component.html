@@ -49,12 +49,22 @@
                 <div class="menu-bar">
                   <ul class="menu-links">
                     <li class="active"><a href="/home"> <i class="fa fa-home" style="font-size: 25px"></i></a></li>
-                    <li routerLinkActive="active"><a routerLink="/technoradiance" style="color:orangered!important;"> Technoradiance </a></li>
-                    <li routerLinkActive="active"><a routerLink="/workshops" >Workshops </a></li>
+                    <li routerLinkActive="active"><a routerLink="/techradiance" style="color:orangered!important;"> Techradiance </a></li>
+                    <!--<li routerLinkActive="active"><a routerLink="/workshops" >Workshops </a></li>-->
+                    <li><a href="javascript:void(0)">Workshops<i class="fa fa-angle-down"></i></a>
+                      <ul class="drop-down-multilevel">
+                        <li><a routerLink="/workshops/cs">CS/IT </a></li>
+                        <li><a routerLink="/workshops/me">Mechanical </a></li>
+                        <li><a routerLink="/workshops/ece">Electrical & Electronics </a></li>
+                        <li><a routerLink="/workshops/civil">Civil</a></li>
+                        <li><a routerLink="/workshops/robotics">Robotics</a></li>
+                      </ul>
+                    </li>
                     <li routerLinkActive="active"><a routerLink="/trainings" >Training </a></li>
                     <li routerLinkActive="active"><a routerLink="/gallery" >Gallery </a></li>
                     <li routerLinkActive="active"><a routerLink="/faqs" >FAQs </a></li>
                     <li routerLinkActive="active"><a routerLink="/contact-us" >Contact Us </a></li>
+
                     <!--<li class="active"><a href="javascript:void(0)"> Features <i class="fa fa-angle-down fa-indicator"></i></a>-->
                       <!--&lt;!&ndash; drop down multilevel  &ndash;&gt;-->
                       <!--<ul class="drop-down-multilevel">-->

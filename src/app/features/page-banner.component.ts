@@ -10,10 +10,14 @@ export class PageBannerComponent implements OnInit {
   img;
   src;
 
-  constructor(private route:ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.img = this.route.snapshot.routeConfig.path;
+    let s = this.route.snapshot.routeConfig.path;
+    const n = s.indexOf('/');
+    s = s.substring(0, n !== -1 ? n : s.length);
+    this.img = s;
+    console.log(this.img, s);
     }
 
 }

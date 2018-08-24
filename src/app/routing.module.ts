@@ -12,11 +12,11 @@ import {TechradianceComponent} from './techfest/techradiance.component';
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'faqs', component: FaqComponent },
-  { path: 'workshops', component: WorkshopsComponent},
+  { path: 'workshops/:cat', component: WorkshopsComponent},
   { path: 'trainings', component: TrainingComponent},
   { path: 'gallery', component: GalleryComponent},
   { path: 'contact-us', component: ContactComponent},
-  { path: "technoradiance", component: TechradianceComponent},
+  { path: 'techradiance', component: TechradianceComponent},
   { path: '**', redirectTo: 'home' }
 ]
 @NgModule({
