@@ -215,6 +215,8 @@
     padding-left: 25px;
   }
 }
-
+.action-box.pattern-2 {
+  padding: 10px 30px;
+}
 
 /*Card CSS end*/
