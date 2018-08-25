@@ -108,22 +108,22 @@ our-service -->
 <section class="action-box pattern-2 full-width" style="background: url(../assets/images/pattern/pattern-bg.png) repeat;">
   <div class="container">
     <div class="row">
-      <div class="col-lg-12 col-md-12">
-        <div class="col-md-4">
+      <div class="col-lg-12 col-md-12" style="padding-bottom: 40px">
+        <div class="text-center">
+          <h2 class="title-effect">Browse workshops by category</h2>
+        </div>
+        <div class="col-md-2" *ngFor="let workshop of workshops">
           <div class="blog-card">
             <div class="meta">
-              <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)"></div>
+              <div class="photo" style="background-image: url(../assets/images/bgd.jpeg)"></div>
               <ul class="details">
-                <li class="author"><a href="#">By: HarbourTech Professionals</a></li>
-                <li class="author"><a href="#">Category: {{filter}}</a></li>
+                <li class="author"><a href="#">Browse</a></li>
               </ul>
             </div>
-            <div class="description">
-              <h1>{{workshop.name}}</h1>
-              <h2>Opening a door to the future</h2>
-              <p> Fee: {{workshop.fee}}</p>
+            <div class="description" style="padding-top: 39%;">
+              <h1>{{workshop.cat}}</h1>
               <p class="read-more">
-                <a routerLink="/#">Read More</a>
+                <a routerLink="{{workshop.link}}">Go</a>
               </p>
             </div>
           </div>
