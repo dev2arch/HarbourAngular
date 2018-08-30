@@ -8,12 +8,23 @@ import { WorkshopsComponent } from './workshops.component';
 import { TrainingComponent } from './training.component';
 import { GalleryComponent } from './gallery.component';
 import { PageBannerComponent } from './page-banner.component';
+import { ViewComponent } from './view.component';
+import {FeaturesRoutingModule} from './features-routing.module';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FeaturesRoutingModule
   ],
-  declarations: [FaqComponent, ContactComponent, WorkshopsComponent, TrainingComponent, GalleryComponent, PageBannerComponent],
+  declarations: [
+    ViewComponent,
+    FaqComponent,
+    ContactComponent,
+    WorkshopsComponent,
+    TrainingComponent,
+    GalleryComponent,
+    PageBannerComponent,
+   ],
   exports: [PageBannerComponent]
 })
 export class FeaturesModule { }

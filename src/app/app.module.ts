@@ -24,7 +24,7 @@ import {TechfestModule} from './techfest/techfest.module';
     BrowserModule,
     RoutingModule,
     FeaturesModule,
-    TechfestModule
+     TechfestModule
   ],
   providers: [],
   bootstrap: [AppComponent]
