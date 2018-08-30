@@ -7,14 +7,17 @@ import { ContactComponent } from './contact.component';
 import { WorkshopsComponent } from './workshops.component';
 import { TrainingComponent } from './training.component';
 import { GalleryComponent } from './gallery.component';
-import { PageBannerComponent } from './page-banner.component';
 import { ViewComponent } from './view.component';
 import {FeaturesRoutingModule} from './features-routing.module';
+import {SharedModule} from '../shared/shared.module';
+import {TechfestModule} from '../techfest/techfest.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    FeaturesRoutingModule
+    FeaturesRoutingModule,
+    SharedModule,
+    TechfestModule
   ],
   declarations: [
     ViewComponent,
@@ -23,8 +26,7 @@ import {FeaturesRoutingModule} from './features-routing.module';
     WorkshopsComponent,
     TrainingComponent,
     GalleryComponent,
-    PageBannerComponent,
    ],
-  exports: [PageBannerComponent]
+  exports: []
 })
 export class FeaturesModule { }

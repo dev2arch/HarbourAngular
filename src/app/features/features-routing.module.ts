@@ -10,8 +10,7 @@ import {TechradianceComponent} from '../techfest/techradiance.component';
 
 
 const featuresRoute: Routes = [
-    { path: 'view', component: ViewComponent , children: [
-      { path: '', component: ViewComponent },
+    { path: '', component: ViewComponent , children: [
       { path: 'faqs', component: FaqComponent },
       { path: 'workshops/:cat', component: WorkshopsComponent},
       { path: 'trainings', component: TrainingComponent},
