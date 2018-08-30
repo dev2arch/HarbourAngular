@@ -7,17 +7,18 @@ import {TrainingComponent} from './features/training.component';
 import {GalleryComponent} from './features/gallery.component';
 import {ContactComponent} from './features/contact.component';
 import {TechradianceComponent} from './techfest/techradiance.component';
+import {ViewComponent} from "./features/view.component";
 
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'faqs', component: FaqComponent },
-  { path: 'workshops/:cat', component: WorkshopsComponent},
-  { path: 'trainings', component: TrainingComponent},
-  { path: 'gallery', component: GalleryComponent},
-  { path: 'contact-us', component: ContactComponent},
-  { path: 'techradiance', component: TechradianceComponent},
-  { path: '**', redirectTo: 'home' }
+  // { path: 'faqs', component: FaqComponent },
+  // { path: 'workshops/:cat', component: WorkshopsComponent},
+  // { path: 'trainings', component: TrainingComponent},
+  // { path: 'gallery', component: GalleryComponent},
+  // { path: 'contact-us', component: ContactComponent},
+  // { path: 'techradiance', component: TechradianceComponent},
+  // { path: '**', redirectTo: 'home' }
 ]
 @NgModule({
   imports: [
