@@ -24,8 +24,6 @@ import {SharedModule} from './shared/shared.module';
   imports: [
     BrowserModule,
     RoutingModule,
-    // FeaturesModule,
-    // TechfestModule,
     SharedModule
   ],
   providers: [],
