@@ -4,6 +4,7 @@ import {HomeComponent} from './home.component';
 
 
 const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'view', loadChildren:'./features/features.module#FeaturesModule'},
 ]

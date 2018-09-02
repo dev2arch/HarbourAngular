@@ -218,5 +218,13 @@
 .action-box.pattern-2 {
   padding: 10px 30px;
 }
-
+.associate-logo{
+  height: 80px!important;
+  width: auto!important;
+  padding-top: 5px!important;
+  padding-left: 5px!important;
+}
+.no-bg{
+  background: none!important;
+}
 /*Card CSS end*/
