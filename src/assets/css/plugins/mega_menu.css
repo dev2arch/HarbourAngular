@@ -176,7 +176,7 @@
     .mega-menu .menu-links > li.active .drop-down-multilevel a { color: #323232; }
     .mega-menu .menu-links > li.active .drop-down-multilevel a:hover { color: #84ba3f; }
     .mega-menu .drop-down-multilevel a { margin: 0; padding: 10px 30px; font-size: 0.7800em; text-transform: capitalize; display: inline-block; float: left; width: 100%; color: #323232; -webkit-transition: color 200ms ease; transition: color 200ms ease; min-height: 40px; }
-    
+
     .mega-menu .drop-down-multilevel > li:first-child > a { padding-top: 18px; }
     .mega-menu .drop-down-multilevel > li:last-child > a { padding-bottom: 18px; }
 
@@ -514,7 +514,7 @@
       }
       @media screen and (min-width:993px) {
         .mega-menu.desktopTopFixed .menu-list-items {    /*--------------------------------------------------------- TOP FIXED FOR DESKTOP */
-        position: fixed; top: 0; left: 0; right: 0; max-width: 100%; padding: 0px 10px; background: #323232; box-shadow: 0 0 10px rgba(0, 0, 0, .1); }
+        position: fixed; top: 0; left: 0; right: 0; max-width: 100%; padding: 0px 10px; background: #000000d6; box-shadow: 0 0 10px rgba(0, 0, 0, .1); }
         .mega-menu.desktopTopFixed .menu-list-items .drop-down.grid-col-12,
         .mega-menu.desktopTopFixed .menu-list-items .drop-down-tab-bar.grid-col-12 { width: 100%; margin: 0px; }
         .mega-menu.desktopTopFixed .menu-list-items .menu-logo > li > a img { height: 40px; padding-top: 0px; margin: 15px 0px;    /*width: 75%;*/ }

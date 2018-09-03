@@ -519,7 +519,7 @@ header.one-page { position: relative; background: #323232; }
 .collapse.in { display:block !important; }
 .navbar .navbar-brand { padding:0;}
 .navbar .navbar-brand img { height: 28px; }
-.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form { background: #323232; border:0; position: absolute; width: 100%; left: 0; right: 0; }
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form { background: #000000d6; border:0; position: absolute; width: 100%; left: 0; right: 0; }
 .navbar-collapse { box-shadow: none; }
 .navbar-inverse .navbar-nav>li { padding: 15px 15px; }
 .navbar-nav { float: none; }
