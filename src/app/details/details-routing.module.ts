@@ -8,7 +8,7 @@ import {ViewDetailsComponent} from './view-details.component';
 const detailsRoute: Routes = [
     { path: '', component: ViewDetailsComponent , children: [
     { path: 'techfest', component: TechfestDetailsComponent },
-    { path: 'exam', component: ExamexpressDetailsComponent },
+    { path: 'examexpress', component: ExamexpressDetailsComponent },
     { path: 'trainings', component: TrainingDetailsComponent},
   ]
   },
