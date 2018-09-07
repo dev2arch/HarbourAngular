@@ -62,6 +62,38 @@ export class GalleryComponent implements OnInit {
       src: '../../assets/images/tech18kharag/tech18kharag4.jpg'
     }
   ]
+  imagesfinale = [
+    {
+      src: '../../assets/images/imagesfinale/finale1.jpg'
+    },
+    {
+      src: '../../assets/images/imagesfinale/finale2.jpg'
+    },
+    {
+      src: '../../assets/images/imagesfinale/finale3.jpg'
+    },
+    {
+      src: '../../assets/images/imagesfinale/finale4.jpg'
+    },
+    {
+      src: '../../assets/images/imagesfinale/finale5.jpg'
+    },
+    {
+      src: '../../assets/images/imagesfinale/finale6.jpg'
+    },
+    {
+      src: '../../assets/images/imagesfinale/finale7.jpg'
+    },
+    {
+      src: '../../assets/images/imagesfinale/finale8.jpg'
+    },
+    {
+      src: '../../assets/images/imagesfinale/finale9.jpg'
+    },
+    {
+      src: '../../assets/images/imagesfinale/finale10.jpg'
+    }
+  ]
   constructor() { }
 
   ngOnInit() {

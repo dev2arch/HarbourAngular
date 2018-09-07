@@ -2,17 +2,29 @@
 <section class="custom-padding">
   <div class="container">
     <div class="row mt-60">
+      <div class="col-md-12">
+        <div class="section-title text-center">
+          <h3>Finale Pics</h3>
+        </div>
+        <div *ngFor="let image of imagesfinale " class="col-md-3" style="padding: 10px!important">
+          <img id="myImg" src="{{image.src}}"  style="width:100%;" (click)="onClick(image.src)">
+        </div>
+      </div>
+      <div class="col-md-12">
       <div class="section-title text-center">
         <h3>Techradiance'18 with Aakaar IIT Bombay</h3>
       </div>
       <div *ngFor="let image of imagesakaar " class="col-md-3" style="padding: 10px!important">
       <img id="myImg" src="{{image.src}}"  style="width:100%;" (click)="onClick(image.src)">
       </div>
+      </div>
+      <div class="col-md-12">
       <div class="section-title text-center">
         <h3>Techradianc'18 IIT Kharagpur</h3>
       </div>
       <div *ngFor="let image of imageskharag " class="col-md-3" style="padding: 10px!important">
         <img id="myImg" src="{{image.src}}"  style="width:100%;" (click)="onClick(image.src)">
+      </div>
       </div>
 
       <!-- The Modal -->
