@@ -11,12 +11,15 @@ import { ViewComponent } from './view.component';
 import {FeaturesRoutingModule} from './features-routing.module';
 import {SharedModule} from '../shared/shared.module';
 import {TechfestModule} from '../techfest/techfest.module';
+import {CertificateVarificationComponent} from "../certificate-varification.component";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   imports: [
     CommonModule,
     FeaturesRoutingModule,
     SharedModule,
+    FormsModule,
     TechfestModule
   ],
   declarations: [
@@ -26,6 +29,7 @@ import {TechfestModule} from '../techfest/techfest.module';
     WorkshopsComponent,
     TrainingComponent,
     GalleryComponent,
+    CertificateVarificationComponent
    ],
   exports: []
 })

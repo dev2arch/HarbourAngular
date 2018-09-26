@@ -11,6 +11,8 @@ import { FooterComponent } from './common/footer.component';
 // import { FeaturesModule } from './features/features.module';
 
 import {SharedModule} from './shared/shared.module';
+import {StudentDataService} from "./student-data.service";
+import {HttpModule} from "@angular/http";
 
 
 @NgModule({
@@ -22,11 +24,14 @@ import {SharedModule} from './shared/shared.module';
     FooterComponent
   ],
   imports: [
+    HttpModule,
     BrowserModule,
     RoutingModule,
     SharedModule
   ],
-  providers: [],
+  providers: [
+    StudentDataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

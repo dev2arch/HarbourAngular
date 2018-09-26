@@ -7,6 +7,7 @@ import {TrainingComponent} from './training.component';
 import {GalleryComponent} from './gallery.component';
 import {ContactComponent} from './contact.component';
 import {TechradianceComponent} from '../techfest/techradiance.component';
+import {CertificateVarificationComponent} from "../certificate-varification.component";
 
 
 const featuresRoute: Routes = [
@@ -16,7 +17,8 @@ const featuresRoute: Routes = [
       { path: 'trainings', component: TrainingComponent},
       { path: 'gallery', component: GalleryComponent},
       { path: 'contact-us', component: ContactComponent},
-      { path: 'techradiance', component: TechradianceComponent}
+      { path: 'techradiance', component: TechradianceComponent},
+      { path: 'certificate-verification', component: CertificateVarificationComponent}
       ]
     },
   { path: '**', redirectTo: 'home' }
