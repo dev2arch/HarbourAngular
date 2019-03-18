@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
@@ -12,11 +12,11 @@ import { FooterComponent } from './common/footer.component';
 // import { FeaturesModule } from './features/features.module';
 
 import {SharedModule} from './shared/shared.module';
-import {StudentDataService} from "./student-data.service";
-import {HttpModule} from "@angular/http";
-import {InAppBrowser} from "@ionic-native/in-app-browser";
+import {StudentDataService} from './student-data.service';
+import {HttpModule} from '@angular/http';
+import {InAppBrowser} from '@ionic-native/in-app-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-// import {AtomPaynetz} from './AtomPaynetz';
+// import {AtomPaynetz} from './AtomPaynetz'
 
 
 @NgModule({
@@ -36,7 +36,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
   providers: [
     StudentDataService,
     InAppBrowser,
-    // {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
 
 
   ],

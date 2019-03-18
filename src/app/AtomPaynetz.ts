@@ -1,37 +1,34 @@
-import {Injectable} from "@angular/core";
+import {Injectable} from '@angular/core';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
-import {HmacSHA512} from 'crypto-js'
+import {HmacSHA512} from 'crypto-js';
 
 /**
  * Created by work on 20/11/17.
  */
 
-var ap;
+let ap;
 @Injectable()
 export class AtomPaynetz {
 
-  //iab:InAppBrowser;
-  //HmacSHA512:any;
-  browser:any;
-  callback:any;
-  config:any;
-  response:any;
-  constructor(public iab:InAppBrowser){
-   // this.iab = iab;
-    //this.HmacSHA512 = HmacSHA512;
-    console.log(HmacSHA512);
-    ap=this;
 
+  browser: any;
+  callback: any;
+  config: any;
+  response: any;
+  constructor(public iab: InAppBrowser) {
+
+    console.log(HmacSHA512);
+    ap = this;
   }
 
-  getResponse(){
+  getResponse() {
     return this.response;
   }
 
-  pay(config,data, callback){
-    this.callback=callback;
+  pay(config, data, callback) {
+    this.callback = callback;
     this.config = config;
-    if(config["mode"] == "live"){
+    if (config ["mode"] == "live"){
       config["url"] = "https://payment.atomtech.in/paynetz/epi/fts";
       config["ru"] = "https://payment.atomtech.in/mobilesdk/param";
     } else {
@@ -121,6 +118,7 @@ export class AtomPaynetz {
     url = url + "&signature=" + this.generateChecksum(config,data);
     url = url + "&ru=" + config["ru"];
     console.log(url);
+    console.log(data)
     return url;
 
   }
