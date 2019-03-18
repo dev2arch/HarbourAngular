@@ -13,6 +13,8 @@ import {SharedModule} from '../shared/shared.module';
 import {TechfestModule} from '../techfest/techfest.module';
 import {CertificateVarificationComponent} from "../certificate-varification.component";
 import {FormsModule} from "@angular/forms";
+import { FinaleComponent } from './finale.component';
+import { PaymentComponent } from './payment.component';
 
 @NgModule({
   imports: [
@@ -29,7 +31,9 @@ import {FormsModule} from "@angular/forms";
     WorkshopsComponent,
     TrainingComponent,
     GalleryComponent,
-    CertificateVarificationComponent
+    CertificateVarificationComponent,
+    FinaleComponent,
+    PaymentComponent
    ],
   exports: []
 })

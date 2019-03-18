@@ -1,0 +1,42 @@
+<app-page-banner></app-page-banner>
+<section class="page-section-ptb theme-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <!--<h4 class="mb-40">Dark Form</h4>-->
+        <div class="contact-form dark-form clearfix">
+          <div class="section-field">
+            <input type="text" placeholder="Name*" class="form-control"  name="name">
+          </div>
+          <div class="section-field">
+            <input type="email" placeholder="Email*" class="form-control" name="email">
+          </div>
+          <div class="section-field">
+            <input type="text" placeholder="Phone*" class="form-control" name="phone">
+          </div>
+          <div class="section-field">
+            <input type="text" placeholder="School/College" class="form-control" name="school">
+          </div>
+          <div class="section-field textarea">
+            <select class="form-control">
+              <option value=413 class="form-control">National Level Junior Championship (Hardware)</option>
+              <option value="saab" class="form-control">National Level Junior Championship (Software)</option>
+              <option value="mercedes" class="form-control">National Level Senior Championship</option>
+              <option value="audi" class="form-control">National Level Championship for CS & IT</option>
+              <option value="audi" class="form-control">National Level Championship for Mechanical & Civil </option>
+              <option value="audi" class="form-control">OpenRound</option>
+            </select>
+          </div>
+          <div class="section-field">
+            <input type="hidden" name="action" value="sendEmail"/>
+            <button name="submit" type="submit" value="Send" class="button white" (click)="callAtom()">
+              <!--<a target="_blank" href="https://pgreports.atomtech.in/SocialCampaignPayment/transaction?data=Yg5O6rbBOoF3dCCHrS1G4w==">-->
+              <span> Make Payment </span> <i class="fa fa-paper-plane"></i>
+              <!--</a>-->
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

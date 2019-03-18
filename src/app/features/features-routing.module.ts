@@ -8,6 +8,8 @@ import {GalleryComponent} from './gallery.component';
 import {ContactComponent} from './contact.component';
 import {TechradianceComponent} from '../techfest/techradiance.component';
 import {CertificateVarificationComponent} from "../certificate-varification.component";
+import {FinaleComponent} from './finale.component';
+import {PaymentComponent} from './payment.component';
 
 
 const featuresRoute: Routes = [
@@ -18,6 +20,8 @@ const featuresRoute: Routes = [
       { path: 'gallery', component: GalleryComponent},
       { path: 'contact-us', component: ContactComponent},
       { path: 'techradiance', component: TechradianceComponent},
+      { path: 'finale2019', component: FinaleComponent},
+      { path: 'payment', component: PaymentComponent},
       { path: 'certificate-verification', component: CertificateVarificationComponent}
       ]
     },
