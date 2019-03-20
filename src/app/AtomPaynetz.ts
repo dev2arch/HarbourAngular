@@ -30,7 +30,7 @@ export class AtomPaynetz {
     this.config = config;
     if (config ["mode"] == "live"){
       config["url"] = "https://payment.atomtech.in/paynetz/epi/fts";
-      config["ru"] = "https://payment.atomtech.in/mobilesdk/param";
+      config["ru"] = "http://harbourtech.co.in/view/payment";
     } else {
       config["url"] = "https://paynetzuat.atomtech.in/paynetz/epi/fts";
       config["ru"] = "https://paynetzuat.atomtech.in/mobilesdk/param";
@@ -42,20 +42,21 @@ export class AtomPaynetz {
             "clearcache":"yes",
             "hardwareback":"no"
         });
+      this.parseResponse;
 
-      this.browser.on("loadstop")
-        .subscribe(
-          (event) => {
-            console.log(event);
-            var expr = /\/mobilesdk\/param/;  // no quotes here
-            if(expr.test(event.url)){
-               //alert(event.url);
-              this.browser.executeScript({code:"document.getElementsByTagName('h5')[0].innerHTML"}, this.parseResponse);
-            }
-          },
-          err => {
-            console.log(event);
-          });
+      // this.browser.on("loadstop")
+      //   .subscribe(
+      //     (event) => {
+      //       console.log(event);
+      //       var expr = /\/mobilesdk\/param/;  // no quotes here
+      //       if(expr.test(event.url)){
+      //          //alert(event.url);
+      //         this.browser.executeScript({code:"document.getElementsByTagName('h5')[0].innerHTML"}, this.parseResponse);
+      //       }
+      //     },
+      //     err => {
+      //       console.log(event);
+      //     });
 
     }
   }

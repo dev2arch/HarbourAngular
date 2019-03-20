@@ -1,42 +1,72 @@
 <app-page-banner></app-page-banner>
-<section class="page-section-ptb theme-bg">
+<section class="page-section-ptb ">
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
         <!--<h4 class="mb-40">Dark Form</h4>-->
-        <div class="contact-form dark-form clearfix">
-          <div class="section-field">
-            <input type="text" placeholder="Name*" class="form-control"  name="name">
-          </div>
-          <div class="section-field">
-            <input type="email" placeholder="Email*" class="form-control" name="email">
-          </div>
-          <div class="section-field">
-            <input type="text" placeholder="Phone*" class="form-control" name="phone">
-          </div>
-          <div class="section-field">
-            <input type="text" placeholder="School/College" class="form-control" name="school">
-          </div>
-          <div class="section-field textarea">
-            <select class="form-control">
-              <option value=413 class="form-control">National Level Junior Championship (Hardware)</option>
-              <option value="saab" class="form-control">National Level Junior Championship (Software)</option>
-              <option value="mercedes" class="form-control">National Level Senior Championship</option>
-              <option value="audi" class="form-control">National Level Championship for CS & IT</option>
-              <option value="audi" class="form-control">National Level Championship for Mechanical & Civil </option>
-              <option value="audi" class="form-control">OpenRound</option>
+        <div class="contact-form dark-form clearfix row">
+          <form   (ngSubmit)="onSubmit(f)" #f="ngForm">
+          <!--<div class="section-field">-->
+            <!--<input type="text" placeholder="Name*" class="form-control"  name="name" ngModel>-->
+          <!--</div>-->
+          <!--<div class="section-field">-->
+            <!--<input type="email" placeholder="Email*" class="form-control" name="uemail" ngModel>-->
+          <!--</div>-->
+          <!--<div class="section-field">-->
+            <!--<input type="text" placeholder="Phone*" class="form-control" name="phone" ngModel>-->
+          <!--</div>-->
+          <!--<div class="section-field">-->
+            <!--<input type="text" placeholder="School/College" class="form-control" name="school" ngModel>-->
+          <!--</div>-->
+          <div class="section-field  col-sm-6">Select Championship
+            <select class="form-control" ngModel name="fee">
+              <option value="413" class="form-control">National Level Junior Championship (Hardware)</option>
+              <option value="413" class="form-control">National Level Junior Championship (Software)</option>
+              <option value="413" class="form-control">National Level Senior Championship</option>
+              <option value="413" class="form-control">National Level Championship for CS & IT</option>
+              <option value="413" class="form-control">National Level Championship for Mechanical & Civil </option>
+              <option value="590" class="form-control">OpenRound</option>
+              <option value="50" class="form-control">Test</option>
             </select>
           </div>
-          <div class="section-field">
+            <div class="section-field  col-sm-6">Select Event
+              <select class="form-control" ngModel name="fee">
+                <option value="413" class="form-control">National Level Junior Championship (Hardware)</option>
+                <option value="413" class="form-control">National Level Junior Championship (Software)</option>
+                <option value="413" class="form-control">National Level Senior Championship</option>
+                <option value="413" class="form-control">National Level Championship for CS & IT</option>
+                <option value="413" class="form-control">National Level Championship for Mechanical & Civil </option>
+                <option value="590" class="form-control">OpenRound</option>
+                <option value="50" class="form-control">Test</option>
+              </select>
+            </div>
+            <div class="col-sm-2">Total Participant<input type="number" placeholder="number" class="form-control"  name="participant" ngModel required></div>
+            <div style="    margin-top: 22px;" class="button " (click)="confirmed(f.value.participant)"> Confirm</div>
+            <div class="col-sm-12" *ngIf="confirm">
+            <div class="row" *ngFor="let participant of participants">
+              <div class="col-sm-3"><input type="text" placeholder="Name*" class="form-control"  name="name{{participant.newKey}}" ngModel></div>
+              <div class="col-sm-3"><input type="email" placeholder="Email*" class="form-control"  name="email{{participant.newKey}}" ngModel></div>
+              <div class="col-sm-3"><input type="number" placeholder="Phone*" class="form-control"  name="Phone{{participant.newKey}}" ngModel></div>
+              <div class="col-sm-3">
+                <div class="row">
+                  <div class="col-sm-6"><input type="number" placeholder="Age*" class="form-control"  name="Age{{participant.newKey}}" ngModel></div>
+                  <div class="col-sm-6"><input type="text" placeholder="Gender*" class="form-control"  name="gender{{participant.newKey}}" ngModel></div>
+                </div>
+              </div>
+            </div>
+            </div>
+          <div class="section-field row col-sm-12">
             <input type="hidden" name="action" value="sendEmail"/>
-            <button name="submit" type="submit" value="Send" class="button white" (click)="callAtom()">
+            <button name="submit" type="submit" value="Send" class="button ">
               <!--<a target="_blank" href="https://pgreports.atomtech.in/SocialCampaignPayment/transaction?data=Yg5O6rbBOoF3dCCHrS1G4w==">-->
               <span> Make Payment </span> <i class="fa fa-paper-plane"></i>
               <!--</a>-->
             </button>
           </div>
+          </form>
         </div>
       </div>
     </div>
   </div>
 </section>
+

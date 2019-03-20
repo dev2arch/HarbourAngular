@@ -19,4 +19,12 @@ export class StudentDataService {
       }
     );
   }
+  public postStudentData(data) {
+    console.log(data)
+    const header = new Headers({'Content-Type' : 'application/json'})
+    return this.http.post('https://harbourapi-c4f39.firebaseio.com/students.json', data,{ headers: header});
+  }
+  public getStudentData(){
+    return this.http.get("https://harbourapi-c4f39.firebaseio.com/students.json")
+  }
 }

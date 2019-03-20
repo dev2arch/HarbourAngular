@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {NgForm} from "@angular/forms";
 import {AtomPaynetz} from '../AtomPaynetz';
+import {StudentDataService} from "../student-data.service";
+import {Response} from "@angular/http";
 
 @Component({
   selector: 'app-payment',
@@ -9,39 +12,72 @@ import {AtomPaynetz} from '../AtomPaynetz';
 })
 export class PaymentComponent implements OnInit {
 
-  constructor( public paynetz:AtomPaynetz) { }
+  confirm = false;
+  participants;
+
+  constructor( public paynetz:AtomPaynetz, public studentDataService: StudentDataService) { }
 
   ngOnInit() {
   }
 
-  callAtom=function () {
+  onSubmit(form: NgForm){
+   console.log(form.value)
+    this.callAtom(form.value);
+   this.studentDataService.postStudentData(form.value)
+     .subscribe(
+       (res) => console.log(res),
+       (err) => console.log(err)
+     );
+   this.studentDataService.getStudentData()
+     .subscribe(
+       (res: Response) => {
+         const data = res.json();
+         console.log(Object.values(data));
+       },
+       (err) => console.log(err)
+     )
+
+  }
+
+  callAtom=function (f) {
     let config = {
       "login": "53916",
       "pass":"43706559",
       "prodid":"HARBOUR",
       "mode":"live",
-      "reqHashKey":"815241222683f4d96",
+      "reqHashKey":"b815241222683f4d96",
       "resHashKey":"6ef0553b59c1b31ee8"
     };
 
     let data = {
       "txnid":"123456",
-      "amt":"100",
+      "amt":f.fee,
       "txncurr":"INR",
-      "udf1":"Test Name",
-      "udf2":"test@gmail.com",
-      "udf3":"9999999999",
+      "udf1":f.name,
+      "udf2":f.uemail,
+      "udf3":f.phone,
       "ttype":"NBFundTransfer",
       "clientcode":"dummy",
       "date":"20/11/2017 15:15:15"
     };
-
+  console.log(data)
     this.paynetz.pay(config, data, this.paymentResCallback);
 
   }
 
-  paymentResCallback(response){
+  paymentResCallback(response) {
     alert(JSON.stringify(response));
+  }
+  confirmed(par){
+    this.confirm = true;
+    console.log(this.confirm,typeof (par))
+    var newArray = [];
+    for( var i = 0 ; i < par ; i++ ) {
+      newArray.push({newKey: i});
+    }
+    this.participants = newArray
+    console.log(this.participants)
+
   }
 
 

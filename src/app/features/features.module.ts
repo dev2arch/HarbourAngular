@@ -15,6 +15,7 @@ import {CertificateVarificationComponent} from "../certificate-varification.comp
 import {FormsModule} from "@angular/forms";
 import { FinaleComponent } from './finale.component';
 import { PaymentComponent } from './payment.component';
+import { PayResComponent } from './pay-res.component';
 
 @NgModule({
   imports: [
@@ -33,7 +34,8 @@ import { PaymentComponent } from './payment.component';
     GalleryComponent,
     CertificateVarificationComponent,
     FinaleComponent,
-    PaymentComponent
+    PaymentComponent,
+    PayResComponent
    ],
   exports: []
 })

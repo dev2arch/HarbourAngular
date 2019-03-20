@@ -7,9 +7,10 @@ import {TrainingComponent} from './training.component';
 import {GalleryComponent} from './gallery.component';
 import {ContactComponent} from './contact.component';
 import {TechradianceComponent} from '../techfest/techradiance.component';
-import {CertificateVarificationComponent} from "../certificate-varification.component";
+import {CertificateVarificationComponent} from '../certificate-varification.component';
 import {FinaleComponent} from './finale.component';
 import {PaymentComponent} from './payment.component';
+import {PayResComponent} from './pay-res.component';
 
 
 const featuresRoute: Routes = [
@@ -22,6 +23,7 @@ const featuresRoute: Routes = [
       { path: 'techradiance', component: TechradianceComponent},
       { path: 'finale2019', component: FinaleComponent},
       { path: 'payment', component: PaymentComponent},
+      { path: 'payment_res', component: PayResComponent},
       { path: 'certificate-verification', component: CertificateVarificationComponent}
       ]
     },
