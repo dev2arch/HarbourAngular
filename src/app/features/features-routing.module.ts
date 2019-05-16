@@ -11,6 +11,8 @@ import {CertificateVarificationComponent} from '../certificate-varification.comp
 import {FinaleComponent} from './finale.component';
 import {PaymentComponent} from './payment.component';
 import {PayResComponent} from './pay-res.component';
+import {StudentListComponent} from "./student-list.component";
+import {RulesComponent} from "./rules.component";
 
 
 const featuresRoute: Routes = [
@@ -24,6 +26,8 @@ const featuresRoute: Routes = [
       { path: 'finale2019', component: FinaleComponent},
       { path: 'payment', component: PaymentComponent},
       { path: 'payment_res', component: PayResComponent},
+      { path: 'studentlist', component: StudentListComponent},
+      { path: 'rules', component: RulesComponent},
       { path: 'certificate-verification', component: CertificateVarificationComponent}
       ]
     },

@@ -12,10 +12,13 @@ import {FeaturesRoutingModule} from './features-routing.module';
 import {SharedModule} from '../shared/shared.module';
 import {TechfestModule} from '../techfest/techfest.module';
 import {CertificateVarificationComponent} from "../certificate-varification.component";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { FinaleComponent } from './finale.component';
 import { PaymentComponent } from './payment.component';
 import { PayResComponent } from './pay-res.component';
+import { StudentListComponent } from './student-list.component';
+import { RulesComponent } from './rules.component';
+
 
 @NgModule({
   imports: [
@@ -23,7 +26,8 @@ import { PayResComponent } from './pay-res.component';
     FeaturesRoutingModule,
     SharedModule,
     FormsModule,
-    TechfestModule
+    TechfestModule,
+    ReactiveFormsModule
   ],
   declarations: [
     ViewComponent,
@@ -35,7 +39,9 @@ import { PayResComponent } from './pay-res.component';
     CertificateVarificationComponent,
     FinaleComponent,
     PaymentComponent,
-    PayResComponent
+    PayResComponent,
+    StudentListComponent,
+    RulesComponent
    ],
   exports: []
 })

@@ -1,0 +1,19 @@
+<app-page-banner></app-page-banner>
+<div class="container">
+  <div class="col-md-3" style="margin-top: 20px !important;margin-bottom: 40px !important"> <h3>Check Rules For</h3></div>
+  <div class="section-field  col-sm-6" style="padding: 0px !important;margin-top: 20px !important;margin-bottom: 20px !important">
+    <form>
+
+  <select class="form-control " style="background-color: #84ba3f!important" (change)="onChange($event.target.value)">
+    <option class="text-white" value="1"  >National Level Senior Championship for EC / EI / EEE</option>
+    <option class="text-white" value="2" >National Level JUNIOR Championship</option>
+    <option class="text-white" value="3">National Level Championship for CS / IT</option>
+    <option class="text-white" value="4" >National Level Championship for Mech/CIVIL</option>
+
+  </select>
+    </form>
+  </div>
+  <br><br>
+  <div class="col-md-12" [innerHTML]="data" style="margin-top: 20px !important;margin-bottom: 20px !important"></div>
+  <br><br>
+</div>

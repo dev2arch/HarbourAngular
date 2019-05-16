@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {NgForm} from "@angular/forms";
+import {FormArray, FormControl, FormGroup, NgForm, Validators} from "@angular/forms";
 import {AtomPaynetz} from '../AtomPaynetz';
 import {StudentDataService} from "../student-data.service";
 import {Response} from "@angular/http";
@@ -14,20 +14,108 @@ export class PaymentComponent implements OnInit {
 
   confirm = false;
   participants;
+  accmodation;
+  studentDataForm:  FormGroup;
 
   constructor( public paynetz:AtomPaynetz, public studentDataService: StudentDataService) { }
 
   ngOnInit() {
+    this.accmodation = false;
+    this.studentDataForm = new FormGroup({
+
+      'event': new FormControl(null, Validators.required),
+      'fee': new FormControl(null, Validators.required),
+      'checkin': new FormControl('NotApplied'),
+      'checkout': new FormControl('NotApplied'),
+      'studentData': new FormArray([
+      ])
+    //               new FormGroup({
+    //   'name': new FormControl(null, Validators.required),
+    //   'email': new FormControl(null, Validators.required),
+    //   'phone': new FormControl(null, Validators.required),
+    //   'institute': new FormControl(null, Validators.required),
+    //   'age': new FormControl(null, Validators.required),
+    //   'gender': new FormControl(null, Validators.required),
+    // }),
+    })
   }
 
-  onSubmit(form: NgForm){
-   console.log(form.value)
-    this.callAtom(form.value);
-   this.studentDataService.postStudentData(form.value)
-     .subscribe(
-       (res) => console.log(res),
-       (err) => console.log(err)
-     );
+  onAddStudent(){
+    const ctrlGroup = new FormGroup({
+      'name': new FormControl(null, Validators.required),
+      'email': new FormControl(null, Validators.required),
+      'phone': new FormControl(null, Validators.required),
+      'institute': new FormControl(null, Validators.required),
+      'age': new FormControl(null, Validators.required),
+      'gender': new FormControl(null, Validators.required),
+    });
+    (<FormArray>this.studentDataForm.get('studentData')).push(ctrlGroup);
+     console.log(this.studentDataForm)
+  }
+
+  onSubmit(){
+    var fee;
+    var days;
+    var perStudentFee;
+    if ( this.studentDataForm.value.checkin === 'NotApplied') {
+      days = 0;
+    } else {
+      days = this.studentDataForm.value.checkout - this.studentDataForm.value.checkin
+    }
+
+   console.log(this.studentDataForm.value)
+    var studentData = this.studentDataForm.value
+    alert(studentData.studentData.length)
+    if(studentData.event == 'Open Round'){
+     fee = studentData.studentData.length * 590;
+     perStudentFee = fee / studentData.studentData.length;
+
+
+    }
+    else if (studentData.event == 'Grand Finale'){
+      fee = studentData.studentData.length * 413
+      perStudentFee = fee / studentData.studentData.length;
+      // alert(fee)
+    }
+    else if (studentData.event == 'Accmodation'){
+      fee = studentData.studentData.length * 885 * days;
+      perStudentFee = fee / studentData.studentData.length;
+
+    }
+    else if (studentData.event == 'OpenRound & Accmodation'){
+      fee = (studentData.studentData.length * (590))+ (studentData.studentData.length * (885) * days);
+      perStudentFee = fee / studentData.studentData.length;
+
+    }
+    else if (studentData.event == 'GrandFinale & Accmodation'){
+      fee = (studentData.studentData.length * (413))+ (studentData.studentData.length * (885) * days);
+      perStudentFee = fee / studentData.studentData.length;
+
+    }
+    alert(fee)
+    var teamcode = Math.floor(Math.random()*90000) + 10000;
+   for (var i in studentData.studentData){
+     studentData.studentData[i].workshop = studentData.fee;
+     studentData.studentData[i].event = studentData.event;
+     studentData.studentData[i].teamcode = teamcode;
+     studentData.studentData[i].fee = perStudentFee;
+     studentData.studentData[i].totalfee = fee;
+     studentData.studentData[i].checkin = this.studentDataForm.value.checkin;
+     studentData.studentData[i].checkout = this.studentDataForm.value.checkout;
+     console.log(studentData.studentData[i])
+     this.studentDataService.postStudentData(studentData.studentData[i])
+       .subscribe(
+         (res) => console.log(res),
+         (err) => console.log(err)
+       );
+
+   }
+   // this.studentDataService.postStudentData(form.value)
+   //   .subscribe(
+   //     (res) => console.log(res),
+   //     (err) => console.log(err)
+   //   );
+    this.callAtom(studentData.studentData, fee);
    this.studentDataService.getStudentData()
      .subscribe(
        (res: Response) => {
@@ -39,7 +127,8 @@ export class PaymentComponent implements OnInit {
 
   }
 
-  callAtom=function (f) {
+  callAtom=function (f, stfee) {
+    var txnid = Math.floor(Math.random()*90000) + 10000;
     let config = {
       "login": "53916",
       "pass":"43706559",
@@ -50,12 +139,12 @@ export class PaymentComponent implements OnInit {
     };
 
     let data = {
-      "txnid":"123456",
-      "amt":f.fee,
+      "txnid": txnid,
+      "amt":stfee,
       "txncurr":"INR",
-      "udf1":f.name,
-      "udf2":f.uemail,
-      "udf3":f.phone,
+      "udf1":f[0].name,
+      "udf2":f[0].email,
+      "udf3":f[0].phone,
       "ttype":"NBFundTransfer",
       "clientcode":"dummy",
       "date":"20/11/2017 15:15:15"
@@ -79,6 +168,14 @@ export class PaymentComponent implements OnInit {
     console.log(this.participants)
 
   }
+  onChange(value){
+   if(value.toLowerCase().indexOf("accmodation") >= 0){
+     this.accmodation = true;
+   }
+   else {
+     this.accmodation = false;
+   }
+}
 
 
 }

@@ -8,7 +8,7 @@ export class StudentDataService {
 
   constructor(private http: Http) {
     this.getJSON().subscribe(data => {
-      console.log(data.data);
+      // console.log(data.data);
     });
   }
   public getJSON(): Observable<any> {

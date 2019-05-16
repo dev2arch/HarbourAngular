@@ -1,71 +1,108 @@
 <app-page-banner></app-page-banner>
 <section class="page-section-ptb ">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
+  <div style="padding:60px">
+    <div class="row" style="height:800px">
+      <div class="col-sm-8">
         <!--<h4 class="mb-40">Dark Form</h4>-->
         <div class="contact-form dark-form clearfix row">
-          <form   (ngSubmit)="onSubmit(f)" #f="ngForm">
-          <!--<div class="section-field">-->
-            <!--<input type="text" placeholder="Name*" class="form-control"  name="name" ngModel>-->
-          <!--</div>-->
-          <!--<div class="section-field">-->
-            <!--<input type="email" placeholder="Email*" class="form-control" name="uemail" ngModel>-->
-          <!--</div>-->
-          <!--<div class="section-field">-->
-            <!--<input type="text" placeholder="Phone*" class="form-control" name="phone" ngModel>-->
-          <!--</div>-->
-          <!--<div class="section-field">-->
-            <!--<input type="text" placeholder="School/College" class="form-control" name="school" ngModel>-->
-          <!--</div>-->
-          <div class="section-field  col-sm-6">Select Championship
-            <select class="form-control" ngModel name="fee">
-              <option value="413" class="form-control">National Level Junior Championship (Hardware)</option>
-              <option value="413" class="form-control">National Level Junior Championship (Software)</option>
-              <option value="413" class="form-control">National Level Senior Championship</option>
-              <option value="413" class="form-control">National Level Championship for CS & IT</option>
-              <option value="413" class="form-control">National Level Championship for Mechanical & Civil </option>
-              <option value="590" class="form-control">OpenRound</option>
-              <option value="50" class="form-control">Test</option>
+          <form  [formGroup]="studentDataForm" (ngSubmit)="onSubmit()">
+          <div class="section-field  col-sm-6" style="padding: 0px !important;">
+            <select class="form-control" ngModel formControlName="event" (change)="onChange($event.target.value)">
+              <option value="" disabled selected>Select your Event</option>
+              <option value="Open Round" class="form-control">Open Round</option>
+              <option value="Grand Finale" class="form-control">Grand Finale</option>
+              <option value="Accmodation" class="form-control">Accmodation</option>
+              <option value="OpenRound & Accmodation" class="form-control">OpenRound & Accmodation</option>
+              <option value="GrandFinale & Accmodation" class="form-control">GrandFinale & Accmodation</option>
             </select>
           </div>
-            <div class="section-field  col-sm-6">Select Event
-              <select class="form-control" ngModel name="fee">
-                <option value="413" class="form-control">National Level Junior Championship (Hardware)</option>
-                <option value="413" class="form-control">National Level Junior Championship (Software)</option>
-                <option value="413" class="form-control">National Level Senior Championship</option>
-                <option value="413" class="form-control">National Level Championship for CS & IT</option>
-                <option value="413" class="form-control">National Level Championship for Mechanical & Civil </option>
-                <option value="590" class="form-control">OpenRound</option>
-                <option value="50" class="form-control">Test</option>
+            <div class="section-field  col-sm-6">
+              <select class="form-control" ngModel formControlName="fee" >
+                <option value="" disabled selected>Select your Championship</option>
+                <option value="National Level Junior Championship (Hardware)" class="form-control">National Level Junior Championship (Hardware)</option>
+                <option value="National Level Junior Championship (Software)" class="form-control">National Level Junior Championship (Software)</option>
+                <option value="National Level Senior Championship" class="form-control">National Level Senior Championship</option>
+                <option value="National Level Championship for CS & IT" class="form-control">National Level Championship for CS & IT</option>
+                <option value="National Level Championship for Mechanical & Civil " class="form-control">National Level Championship for Mechanical & Civil </option>
+                <option value="OpenRound" class="form-control">OpenRound</option>
               </select>
             </div>
-            <div class="col-sm-2">Total Participant<input type="number" placeholder="number" class="form-control"  name="participant" ngModel required></div>
-            <div style="    margin-top: 22px;" class="button " (click)="confirmed(f.value.participant)"> Confirm</div>
-            <div class="col-sm-12" *ngIf="confirm">
-            <div class="row" *ngFor="let participant of participants">
-              <div class="col-sm-3"><input type="text" placeholder="Name*" class="form-control"  name="name{{participant.newKey}}" ngModel></div>
-              <div class="col-sm-3"><input type="email" placeholder="Email*" class="form-control"  name="email{{participant.newKey}}" ngModel></div>
-              <div class="col-sm-3"><input type="number" placeholder="Phone*" class="form-control"  name="Phone{{participant.newKey}}" ngModel></div>
-              <div class="col-sm-3">
-                <div class="row">
-                  <div class="col-sm-6"><input type="number" placeholder="Age*" class="form-control"  name="Age{{participant.newKey}}" ngModel></div>
-                  <div class="col-sm-6"><input type="text" placeholder="Gender*" class="form-control"  name="gender{{participant.newKey}}" ngModel></div>
-                </div>
-              </div>
+            <button  type="button"  class="button " (click)="onAddStudent()" style=" ">
+              <span> Add Student </span> <i class="fa fa-paper-plane"></i>
+              <!--</a>-->
+            </button>
+            <div class="col-md-12" style="padding: 0px !important;">
+            <div formArrayName="studentData">
+            <div *ngFor="let p of studentDataForm.get('studentData').controls; let i=index">
+            <div [formGroupName]="i">
+              <div class="col-sm-3" style="padding: 1px !important;"><input type="text" class="form-control" placeholder="Student Name" formControlName="name"></div>
+              <div class="col-sm-3" style="padding: 1px !important;"><input type="email" class="form-control" placeholder="Student Email" formControlName="email"></div>
+              <div class="col-sm-2" style="padding: 1px !important;"><input type="number" class="form-control" placeholder="Student Mobile" formControlName="phone"></div>
+              <div class="col-sm-2" style="padding: 1px !important;"><input type="text" class="form-control" placeholder="Institute" formControlName="institute"></div>
+              <div class="col-sm-1" style="padding: 1px !important;"><select class="form-control" ngModel formControlName="gender">
+                <option value="" disabled selected>*</option>
+                <option value="M" class="form-control">M</option>
+                <option value="F" class="form-control">F</option>
+              </select></div>
+              <div class="col-sm-1" style="padding: 1px !important;"><input type="number" class="form-control" placeholder="age" formControlName="age"></div>
+            </div>
+            </div>
             </div>
             </div>
           <div class="section-field row col-sm-12">
             <input type="hidden" name="action" value="sendEmail"/>
             <button name="submit" type="submit" value="Send" class="button ">
-              <!--<a target="_blank" href="https://pgreports.atomtech.in/SocialCampaignPayment/transaction?data=Yg5O6rbBOoF3dCCHrS1G4w==">-->
               <span> Make Payment </span> <i class="fa fa-paper-plane"></i>
               <!--</a>-->
             </button>
+
           </div>
           </form>
         </div>
       </div>
+      <div class="col-sm-8" *ngIf="accmodation">
+        <div class="contact-form dark-form clearfix row" style="margin-top:20px">
+        <div class="section-field  col-sm-6" style="padding: 0px !important;">Check-In
+        <select class="form-control" ngModel formControlName="checkin">
+          <option value="" disabled selected>Select your Check-in-Date</option>
+          <option value="12" class="form-control">12 April</option>
+          <option value="13" class="form-control">13 April</option>
+          <option value="14" class="form-control">14 April</option>
+        </select>
+        </div>
+        <div class="section-field  col-sm-6" style="padding: 0px !important;">Check-Out
+          <select class="form-control" ngModel formControlName="checkout">
+            <option value="" disabled selected>Select your Check-out-Date</option>
+            <option value="13" class="form-control">13 April</option>
+            <option value="14" class="form-control">14 April</option>
+            <option value="15" class="form-control">15 April</option>
+          </select>
+        </div>
+        </div>
+      </div>
+
+<div class="col-sm-4" style="padding-left: 40px !important; border-left: solid #cccccc; pos" >
+
+      <h3>ACCOMODATION</h3>
+      <p>On the basis of so many request we are here to inform you about accommodation. We discussed
+      with some hotels &amp; ask for good place with reasonable prices. So here is the details for
+        Accommodation:</p>
+      <h5>1. AC Room Charges will be Rs. 750 per person for one day.</h5>
+      <h5>2. Hotel will be nearby of IIT Campus.</h5>
+      <h5>3. Free Wi-Fi will be there for you.</h5>
+      <h5>4. Complimentary Breakfast is there.</h5>
+      <h5>5. 4-5 person will accommodate in one room.</h5>
+      <h3>Instructions:</h3>
+      <h5>1. You need to carry your school/college identity card/addhar card.</h5>
+      <h5>2. You need to carry payment receipt copy.</h5>
+      <h5>3. The Accommodation fee should be paid in online mode, after that only we’ll be able to</h5>
+      <h5>allocate you hotel room no &amp; name. There is no provision for offline payment.</h5>
+
+
+</div>
+
+
+
     </div>
   </div>
 </section>

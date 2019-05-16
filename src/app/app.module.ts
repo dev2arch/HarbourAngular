@@ -8,6 +8,7 @@ import { RoutingModule } from './routing.module';
 import { HeaderComponent } from './common/header.component';
 import { SliderComponent } from './common/slider.component';
 import { FooterComponent } from './common/footer.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 // import { FeaturesModule } from './features/features.module';
 
@@ -31,6 +32,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
     HttpModule,
     BrowserModule,
     RoutingModule,
+    ReactiveFormsModule,
     SharedModule,
   ],
   providers: [

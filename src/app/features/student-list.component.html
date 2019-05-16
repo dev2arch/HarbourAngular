@@ -1,0 +1,42 @@
+<app-page-banner></app-page-banner>
+
+<div class="container" style="width:90%">
+<table>
+  <tr class="headertable">
+    <th>S. No.</th>
+    <th>Team Code</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Institute</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Workshop</th>
+    <th>Event</th>
+    <th>PerStudent Fee</th>
+    <th>Group Fee</th>
+    <th>Check-In</th>
+    <th>Check-Out</th>
+  </tr>
+
+  <tr *ngFor="let studentData of StudentsData; let i=index">
+    <ng-container *ngIf="studentData.name">
+    <td>{{i}}</td>
+    <td>{{studentData.teamcode}}</td>
+    <td>{{studentData.name}}</td>
+    <td>{{studentData.email}}</td>
+    <td>{{studentData.phone}}</td>
+    <td>{{studentData.institute}}</td>
+    <td>{{studentData.age}}</td>
+    <td>{{studentData.gender}}</td>
+    <td>{{studentData.workshop}}</td>
+      <td>{{studentData.event}}</td>
+      <td>{{studentData.fee}}</td>
+     <td>{{studentData.totalfee}}</td>
+      <td><ng-container *ngIf="studentData.checkin">{{studentData.checkin}}-April-2019</ng-container></td>
+      <td><ng-container *ngIf="studentData.checkout">{{studentData.checkout}}-April-2019</ng-container></td>
+    </ng-container>
+  </tr>
+
+</table>
+</div>
